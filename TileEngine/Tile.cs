@@ -18,6 +18,7 @@ namespace TileEngine
         public static int TileStrecth = 50;
         public Texture2D tile;
         private Rectangle scrRect;
+        public Rectangle hitbox;
         public Vector2 position;
         public Vector2 velocity;
         public int TileType;
@@ -57,6 +58,18 @@ namespace TileEngine
 
         public void SetPassable() {
             passable = NOT_PASSABLE;
+            hitbox = new Rectangle((int)position.X, (int)position.Y, (int)position.X + (int)sprite.Width, (int)position.Y + (int)sprite.Height / 2);
+            int[] totallyPassable = { 0, 2, 8, 14, 18, 22, 24, 28, 30, 34, 58, 64, 70, 88 };
+            int[] partiallyPassable = { 1, 7, 19, 25, 30, 44, 49, 54, 55, 57, 59, 60, 61, 62, 67 };
+
+            for (int i = 0; i < partiallyPassable.Length; i++)
+            {
+                if (TileType == partiallyPassable[i])
+                {
+                    passable = PARTIALLY_PASSABLE;
+                    hitbox = new Rectangle((int)position.X + (int)sprite.Width * (int)0.25f, (int)position.Y + (int)sprite.Width * (int)0.25f, (int)position.X + (int)sprite.Width * (int)0.75f, (int)position.Y + (int)sprite.Height * (int)0.75f);
+                }
+            }
         }
 
 
