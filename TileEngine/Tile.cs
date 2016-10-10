@@ -17,10 +17,15 @@ namespace TileEngine
         public static int TileSize = 16;
         public static int TileStrecth = 50;
         public Texture2D tile;
-        Rectangle scrRect;
+        private Rectangle scrRect;
         public Vector2 position;
         public Vector2 velocity;
         public int TileType;
+
+        public static int NOT_PASSABLE = 0;
+        public static int PARTIALLY_PASSABLE = 1;
+        public static int COMPLETELY_PASSABLE = 2;
+        public int passable;
         
 
         public Tile(){
@@ -45,9 +50,13 @@ namespace TileEngine
             sprite.Position = position;
             sprite.Width = TileSize;
             sprite.Height = TileSize;
-
+            SetPassable();
             
 
+        }
+
+        public void SetPassable() {
+            passable = NOT_PASSABLE;
         }
 
 

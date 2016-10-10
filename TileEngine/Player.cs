@@ -29,8 +29,10 @@ namespace TileEngine
         int speed;
         Vector3 possibleUpdate;
 
-        Vector4 srcRect;
+        Rectangle srcRect;
         int roomX, roomY;
+
+
 
     }
 }
