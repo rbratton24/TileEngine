@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace TileEngine
 {
-    public class Room
+    class Room
     {
         int[,] tileMap;
 
@@ -228,7 +228,7 @@ namespace TileEngine
 
                     sb.Draw(
                         texture,
-                       // new Vector2(x * Tile.TileSize, y * Tile.TileSize),     ///This Makes the tiles really small when displayed
+                        //new Vector2(x * Tile.TileSize, y * Tile.TileSize),     ///This Makes the tiles really small when displayed
                         new Rectangle(x * 64, y * 64, 70, 70),
                         Color.White
                         );
