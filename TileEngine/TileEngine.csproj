@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entity.cs" />
+    <Compile Include="MainGame.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Sprite.cs" />
     <Compile Include="Game1.cs" />

@@ -16,7 +16,11 @@ namespace TileEngine
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D terrian;
+        Texture2D pTexture;
         Room room;
+        //Player player;
+        Vector2 pPos = new Vector2(50,50);
+        Vector2 pVel = new Vector2();
         
         
 
@@ -68,12 +72,14 @@ namespace TileEngine
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             terrian = Content.Load<Texture2D>("overworldTiles");
+           // pTexture = Content.Load<Texture2D>("link");
 
 
             // TODO: use this.Content to load your game content here
             
 
             room = new Room(Content);
+         //   player = new Player(pTexture,pPos, pVel);
 
         }
         
@@ -119,7 +125,8 @@ namespace TileEngine
             spriteBatch.Begin();
 
             room.Draw(spriteBatch);
-            
+           // player.Draw(spriteBatch);
+
             spriteBatch.End();
 
             base.Draw(gameTime);

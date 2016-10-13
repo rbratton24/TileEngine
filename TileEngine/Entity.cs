@@ -41,7 +41,7 @@ namespace TileEngine
             this.hitSizeSquared = tex.Width * tex.Width;
         }
 
-        public virtual void Update(GameTime gt)
+        public virtual void Update(GamePadState gamePadData)
         {
             sprite.Rotation = rot;
             sprite.Position = Pos;
